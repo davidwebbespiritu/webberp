@@ -1,0 +1,273 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-03 09:55:04.448165",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "requested_by",
+  "column_break_1",
+  "naming_series",
+  "company",
+  "section_break_1",
+  "posting_date",
+  "column_break_2",
+  "expected_by",
+  "section_break_2",
+  "items",
+  "purpose_section",
+  "request_purpose",
+  "project",
+  "section_break_3",
+  "calculated_cost_total",
+  "asked_cost_total",
+  "asked_reason",
+  "column_break_3",
+  "approved_total_cost",
+  "more_info_tab",
+  "approver",
+  "approver_signature",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "PRCR-REQ-.YYYY.-",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Procurement Request",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_purpose",
+   "fieldtype": "Text Editor",
+   "label": "Reason for Requesting/Remarks/References",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "calculated_cost_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Calculated Cost/Budget",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Purchasable Product, Material or Service"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Cost of the Request"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Item(s)",
+   "options": "Procurement Request Item",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "For Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "expected_by",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Expected By"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "approved_total_cost",
+   "fieldtype": "Currency",
+   "label": "Approved Total Cost/Budget",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Requested By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "asked_cost_total",
+   "fieldtype": "Currency",
+   "label": "Asked Total Cost/Budget"
+  },
+  {
+   "fieldname": "asked_reason",
+   "fieldtype": "Long Text",
+   "label": "Reason for Asked Budget",
+   "max_height": "80px"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Timelines"
+  },
+  {
+   "columns": 5,
+   "description": "Give brief title e.g \"Request For Chairs for Conference\"",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "more_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "More Info"
+  },
+  {
+   "fieldname": "purpose_section",
+   "fieldtype": "Section Break",
+   "label": "Purpose"
+  },
+  {
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "Employee",
+   "permlevel": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "approver_signature",
+   "fieldtype": "Signature",
+   "label": "Approver Signature",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  }
+ ],
+ "icon": "fa fa-ticket",
+ "links": [],
+ "modified": "2023-09-14 13:30:20.131203",
+ "modified_by": "Administrator",
+ "module": "webberp",
+ "name": "Procurement Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Executives",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Executives",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "title",
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}
